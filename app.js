@@ -20,27 +20,32 @@ const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
     .then( (response) => response.json())
     .then( (json) => arrayOfTodos = json)
-    console.log(fetchTodos)
+
 }
     
 const logTodos = () => {
+    console.log('hello')
     console.log(arrayOfTodos)
 }
     
 const populateTodos = () => {
-        
-        
+    
     const orderedList = document.getElementById('todo-list')
-    const newListItem = document.createElement('li')
-    const newListContent = document.createTextNode(arrayOfTodos.title)
-    newListItem.appendChild(newListContent)
-    orderedList.appendChild(newListItem)
+    for(let i = 0; i < arrayOfTodos.length; i++){
+        console.log(arrayOfTodos.length,'*************', i, '***************')
+        // const newListItem = document.createElement('li')
+        const newListItem = document.createElement('li')
+        const newListContent = document.createTextNode(arrayOfTodos[i].title)
+        console.log(newListContent, '************')
+        newListItem.appendChild(newListContent)
+        orderedList.appendChild(newListItem)
+    }
         
         
-    console.log(newListContent, 'title data')
-    console.log(newListItem, "new li")
+    // console.log(newListContent, 'title data')
+    // console.log(newListItem, "new li")
     console.log(orderedList, 'ol')
-    console.log(populateTodos, 'populate')
+    // console.log(populateTodos(), 'populate')
 }
 
     

@@ -48,6 +48,16 @@ const populateTodos = () => {
     // console.log(populateTodos(), 'populate')
 }
 
+const filterTodos = () => {
+    const filteredList = document.getElementById('userID')
+    const filtering = arrayOfTodos.filter(i => i.userId = filteredList)
+    console.log(filteredList, '*****************')
+    console.log(filtering, 'filtering*****')
+}
+
+// const result = arrayOfTodos.filter(filterTodos)
+console.log(filterTodos(),'*******')
+
     
     
     

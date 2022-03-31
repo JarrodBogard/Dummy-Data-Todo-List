@@ -48,7 +48,43 @@ const populateTodos = () => {
     // console.log(populateTodos(), 'populate')
 }
 
+
+
+const filterTodos = () => {
+    // filter current list //
+    const filteredList = document.getElementById('userID')
+    // const addList = document.getElementById('filtered-todo-list')
+    // const orderedList = document.getElementById('todo-list')
     
+    const input = filteredList.value
+    const filtering = arrayOfTodos.filter(i => i.userId === input.length)
+    
+    console.log(arrayOfTodos, 'array of todos')
+    console.log(input,'********')
+
+    // clear current list //
+    // const orderedList = document.getElementById('todo-list')
+    // orderedList.clear() 
+    // orderedList.innerText = ''
+
+    // for(let i = 0; i < filtering.length; i++){
+
+
+    // // add new list items to page //
+    // const newFilteredItem = document.createElement('li')
+    // const newFilteredContent = document.createTextNode(filteredList[i].title)
+    // newFilteredItem.appendChild(newFilteredContent)
+    // addList.appendChild(newFilteredItem)
+    // }
+
+    // console.log(newFilteredContent,'new content')
+    // console.log(filteredList, '*****************')
+    console.log(filtering, 'filtering*****')
+}
+
+// const result = arrayOfTodos.filter(filterTodos)
+// console.log(filterTodos(),'*******')
+
     
     
     

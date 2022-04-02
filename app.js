@@ -51,37 +51,78 @@ const populateTodos = () => {
 
 
 const filterTodos = () => {
+    // clear current list //
+    const orderedList = document.getElementById('todo-list') 
+    orderedList.innerText = ''
+
     // filter current list //
     const filteredList = document.getElementById('userID')
-    // const addList = document.getElementById('filtered-todo-list')
-    // const orderedList = document.getElementById('todo-list')
-    
-    const input = filteredList.value
-    const filtering = arrayOfTodos.filter(i => i.userId === input.length)
+    console.log()
+    // filteredList = arrayOfTodos.filter(i => i.userId)
+    let input = filteredList.value
+    const filtering = arrayOfTodos.filter(i => i.userId == input)
     
     console.log(arrayOfTodos, 'array of todos')
     console.log(input,'********')
-
-    // clear current list //
-    // const orderedList = document.getElementById('todo-list')
-    // orderedList.clear() 
-    // orderedList.innerText = ''
-
-    // for(let i = 0; i < filtering.length; i++){
-
-
-    // // add new list items to page //
-    // const newFilteredItem = document.createElement('li')
-    // const newFilteredContent = document.createTextNode(filteredList[i].title)
-    // newFilteredItem.appendChild(newFilteredContent)
-    // addList.appendChild(newFilteredItem)
-    // }
+    
+    
+    for(let i = 0; i < filtering.length; i++){
+        
+        
+      // add new list items to page //
+    const addList = document.getElementById('filtered-todo-list')
+    const newFilteredItem = document.createElement('li')
+    const newFilteredContent = document.createTextNode(filtering[i].title)
+    newFilteredItem.appendChild(newFilteredContent)
+    addList.appendChild(newFilteredItem)
+    }
 
     // console.log(newFilteredContent,'new content')
     // console.log(filteredList, '*****************')
     console.log(filtering, 'filtering*****')
 }
 
+const completedTodos = () => {
+    const orderedList = document.getElementById('todo-list') 
+    orderedList.innerText = ''
+
+    const filtering = arrayOfTodos.filter(i => i.completed == true)
+    console.log(filtering, 'completed list')
+
+    for(let i = 0; i < filtering.length; i++){
+        
+        
+        // add new list items to page //
+    //   const addList = document.getElementById('filtered-todo-list')
+      const newFilteredItem = document.createElement('li')
+      const newFilteredContent = document.createTextNode(filtering[i].title)
+      newFilteredItem.appendChild(newFilteredContent)
+      orderedList.appendChild(newFilteredItem)
+      }
+
+
+}
+
+const incompleteTodos = () => {
+    const orderedList = document.getElementById('todo-list') 
+    orderedList.innerText = ''
+
+    const filtering = arrayOfTodos.filter(i => i.completed == false)
+    console.log(filtering, 'incomplete list')
+
+    for(let i = 0; i < filtering.length; i++){
+        
+        
+        // add new list items to page //
+    //   const addList = document.getElementById('filtered-todo-list')
+      const newFilteredItem = document.createElement('li')
+      const newFilteredContent = document.createTextNode(filtering[i].title)
+      newFilteredItem.appendChild(newFilteredContent)
+      orderedList.appendChild(newFilteredItem)
+      }
+
+
+}
 // const result = arrayOfTodos.filter(filterTodos)
 // console.log(filterTodos(),'*******')
 
